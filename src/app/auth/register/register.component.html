@@ -20,7 +20,10 @@
                     <!--Las nuevas versiones de Angular dan error TS2531: Object is possibly 'null'
                     al hacer la validación mediante el get // Para solucionarlo, o bien añadimos
                     el "!" como promesa de que se va a recibir un valor o bien validamos previamente el valor-->
-                    <i *ngIf="formRegister.get('nombre')!.valid" class="fa fa-check-circle"></i>
+                    <i
+                      *ngIf="formRegister.get('nombre')!.valid"
+                      class="fa fa-check-circle"
+                    ></i>
                   </span>
                 </div>
               </div>
@@ -36,7 +39,10 @@
                 />
                 <div class="input-group-append">
                   <span class="input-group-text">
-                    <i *ngIf="formRegister.get('correo')!.valid" class="fa fa-check-circle"></i>
+                    <i
+                      *ngIf="formRegister.get('correo')!.valid"
+                      class="fa fa-check-circle"
+                    ></i>
                   </span>
                 </div>
               </div>
@@ -52,7 +58,10 @@
                 />
                 <div class="input-group-append">
                   <span class="input-group-text">
-                    <i *ngIf="formRegister.get('password')!.valid" class="fa fa-check-circle"></i>
+                    <i
+                      *ngIf="formRegister.get('password')!.valid"
+                      class="fa fa-check-circle"
+                    ></i>
                   </span>
                 </div>
               </div>
