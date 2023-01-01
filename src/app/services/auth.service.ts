@@ -9,7 +9,6 @@ export class AuthService {
   constructor(public auth: AngularFireAuth) { }
 
   createUser(nombre: string, correo: string, password: string) {
-    //console.log({nombre, correo, password})
     return this.auth.createUserWithEmailAndPassword(correo, password);
   }
 
