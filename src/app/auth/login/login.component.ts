@@ -28,10 +28,18 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+    Swal.fire({
+      title: 'Wait please!',
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
     const { email, password } = this.loginForm.value;
     this.authService
       .loginUser(email, password)
       .then((credenciales) => {
+        Swal.close();
         this.router.navigate(['/']);
       })
       .catch((err) => {
@@ -41,6 +49,6 @@ export class LoginComponent implements OnInit {
           text: err.message,
         });
       });
-      this.loginForm.reset();
+    this.loginForm.reset();
   }
 }

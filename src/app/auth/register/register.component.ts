@@ -29,10 +29,18 @@ export class RegisterComponent implements OnInit {
     if (this.formRegister.invalid) {
       return;
     }
+    Swal.fire({
+      title: 'Wait please!',
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
     const { nombre, correo, password } = this.formRegister.value;
     this.authService
       .createUser(nombre, correo, password)
       .then((credenciales) => {
+        Swal.close();
         this.router.navigate(['/']);
       })
       .catch((err) => {
