@@ -10,10 +10,10 @@
             <div class="form-group">
               <div class="input-group">
                 <input
-                  formControlName="nombre"
+                  formControlName="name"
                   type="text"
                   class="form-control"
-                  placeholder="Nombre"
+                  placeholder="name"
                 />
                 <div class="input-group-append">
                   <span class="input-group-text">
@@ -21,7 +21,7 @@
                     al hacer la validación mediante el get // Para solucionarlo, o bien añadimos
                     el "!" como promesa de que se va a recibir un valor o bien validamos previamente el valor-->
                     <i
-                      *ngIf="formRegister.get('nombre')!.valid"
+                      *ngIf="formRegister.get('name')!.valid"
                       class="fa fa-check-circle"
                     ></i>
                   </span>
@@ -32,15 +32,15 @@
             <div class="form-group">
               <div class="input-group">
                 <input
-                  formControlName="correo"
+                  formControlName="email"
                   type="email"
                   class="form-control"
-                  placeholder="Correo"
+                  placeholder="email"
                 />
                 <div class="input-group-append">
                   <span class="input-group-text">
                     <i
-                      *ngIf="formRegister.get('correo')!.valid"
+                      *ngIf="formRegister.get('email')!.valid"
                       class="fa fa-check-circle"
                     ></i>
                   </span>

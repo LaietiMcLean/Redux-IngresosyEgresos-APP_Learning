@@ -19,8 +19,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.formRegister = this.fb.group({
-      nombre: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
@@ -36,9 +36,9 @@ export class RegisterComponent implements OnInit {
         Swal.showLoading();
       },
     });
-    const { nombre, correo, password } = this.formRegister.value;
+    const { name, email, password } = this.formRegister.value;
     this.authService
-      .createUser(nombre, correo, password)
+      .createUser(name, email, password)
       .then((credenciales) => {
         Swal.close();
         this.router.navigate(['/']);
