@@ -25,8 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    if (this.loginForm.invalid) {
+      return;
+    }
     const { email, password } = this.loginForm.value;
-    console.log({ email, password });
     this.authService
       .loginUser(email, password)
       .then((credenciales) => {
@@ -39,5 +41,6 @@ export class LoginComponent implements OnInit {
           text: err.message,
         });
       });
+      this.loginForm.reset();
   }
 }
